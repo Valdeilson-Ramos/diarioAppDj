@@ -7,7 +7,12 @@
     <title>Login Diario</title>
 </head>
 <body>
-    <h1>Olá Diarios</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Fazer Login</button>
+    </form>
+    
     
 </body>
 </html>
