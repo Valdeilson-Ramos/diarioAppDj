@@ -1,11 +1,20 @@
 from django.shortcuts import render
+
+import diario
 from .forms import LoginForm
 from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponse
+from .models import Diario
 
 # Create your views here.
-
 def index (request):
+    diario = Diario.objects.all()
+    context={
+        'diario':diario,
+    }
+    return render(request, 'diario/index.html', context)
+
+def fazer_login (request):
     if request.POST:
         form=LoginForm(request.POST)
         if form.is_valid():
