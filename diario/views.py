@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 import diario
 from .forms import LoginForm
@@ -8,7 +8,7 @@ from .models import Diario
 
 # Create your views here.
 def index (request):
-    diario = Diario.objects.all()
+    diario = Diario.objects.filter(user=request.user)
     context={
         'diario':diario,
     }
@@ -22,7 +22,7 @@ def fazer_login (request):
             user=authenticate(request, username=cd['username'], password=cd['password'])
             if user is not None:
                 login(request,user)
-                return HttpResponse('<h1>Olá {} </h1>' .format(user))
+                return redirect('index')
             else:
                 return HttpResponse('<h1> Usuário ou senha incorreta </h1')
     form=LoginForm()

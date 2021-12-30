@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for diario in diario %}
-        <p>{{diario.conteudo}} +{{diario.criado}} </p>
-        <p>{{diario.user}}</p>
-    {% endfor %}
-</body>
-</html>
+{% extends 'base/model.html' %}
+
+{% block content %}
+{% for diario in diario %} 
+    <div class="card" >
+        <div class="card-body" >
+            {{diario.conteudo}}
+        </div>
+        <div class="card-footer" >
+            {{diario.criado}} | {{diario.user}}
+        </div>
+    </div>
+{% endfor %}
+    <br>
+
+{% endblock %}
