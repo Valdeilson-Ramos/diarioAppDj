@@ -2,8 +2,12 @@
 
 {% block content %}
 {% for diario in diario %}
-<div class="col-lg-9" > 
+<div class="col-md-9" > 
     <div class="card mt-5" >
+        <div class="card-header" >
+         <a href="{% url 'editar_diario' id=diario.id %}">Editar</a> |||
+         <a href="{% url 'excluir' id=diario.id %}">Excluir</a>
+        </div>
         <div class="card-body" >
             {{diario.conteudo}}
         </div>

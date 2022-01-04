@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Diario(models.Model):
-    conteudo=models.CharField(max_length=500)
+    conteudo=models.TextField(max_length=500)
     criado=models.DateTimeField(auto_now_add=True)
     user=models.ForeignKey(User, on_delete=models.CASCADE)
 

@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 import diario
 from .forms import LoginForm, DiarioForm
 from django.contrib.auth import login,logout,authenticate
@@ -7,6 +7,7 @@ from .models import Diario
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+#Criar novo diario
 def escrever_diario(request):
     if request.POST:
         form=DiarioForm(request.POST)
@@ -21,6 +22,28 @@ def escrever_diario(request):
         'form':form
     }
     return render(request, 'diario/escrever.html', context)
+
+#editando um diario
+def editar_diario(request, id):
+    diario=get_object_or_404(Diario, id=id)
+    form=DiarioForm(instance=diario)
+    if request.POST:
+        form=DiarioForm(request.POST, instance=diario)
+        if form.is_valid():
+            form.user=request.user
+            form.save()
+            return redirect('index')
+    context={
+        'form':form
+    }
+    return render(request, 'diario/editar.html', context)
+
+#Excluir diario
+def excluir_diario(request, id):
+    diario=get_object_or_404(Diario, id=id)
+    diario.delete()
+    return redirect('index')
+
 
 def fazer_logout(request):
     logout(request)
