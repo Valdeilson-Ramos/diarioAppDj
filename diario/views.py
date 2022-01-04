@@ -1,12 +1,32 @@
 from django.shortcuts import redirect, render
-
 import diario
-from .forms import LoginForm
+from .forms import LoginForm, DiarioForm
 from django.contrib.auth import login,logout,authenticate
 from django.http import HttpResponse
 from .models import Diario
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+def escrever_diario(request):
+    if request.POST:
+        form=DiarioForm(request.POST)
+        if form.is_valid():
+            form=form.save(commit=False)
+            form.user=request.user
+            form.save()
+            return redirect('index')
+
+    form=DiarioForm()
+    context={
+        'form':form
+    }
+    return render(request, 'diario/escrever.html', context)
+
+def fazer_logout(request):
+    logout(request)
+    return redirect('login')
+
+@login_required(login_url='login')    
 def index (request):
     diario = Diario.objects.filter(user=request.user)
     context={
