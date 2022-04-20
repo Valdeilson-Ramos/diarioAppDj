@@ -25,3 +25,10 @@ Adicionando Links
 [instagram](https://www.instagram.com/)
 [youtube](youtube.com)
 
+* esta é uma lista não ordenada 
+* segundo item da lista
+* terceiro item da lista
+
+1. essa é uma lista ordenada
+2. esse é o segundo item da lista 
+3. este é oterceiro item da lista
