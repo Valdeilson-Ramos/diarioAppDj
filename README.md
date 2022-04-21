@@ -77,3 +77,11 @@ function showName(nome){
 - [ ] tarefa 1
 - [ ] tarefa 2
 - [x] tarefa realizada
+
+**Trabalhando com tabelas**
+
+propiedades | descrição
+------------|----------
+nome | valdeilson
+profissão | development
+hobby | maker
