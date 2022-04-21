@@ -35,3 +35,39 @@ Adicionando Links
         2. esse é outro subitem
 2. esse é o segundo item da lista 
 3. este é oterceiro item da lista
+
+>Este é um blockquote, usado para destacar uma área
+>
+>ssegunda área destacada
+
+Aqui uma demonstração de como fazer um code highlight para destacar códigos:
+
+```
+pip install requierements.txt
+```
+
+**Exemplo de código para reconhecimento da linguagem**
+
+```js
+function showName(nome){
+        return (pass)
+}
+```
+
+**Uso de códigos HTML**
+
+```html
+<h1>
+        Sistema de registro diário
+        <span>DiarioApp</span>
+</h1>
+```
+
+**Código CSS**
+
+```css
+.titulo{
+        background-color: #FFF;
+        color: #FF0000;
+}
+```
