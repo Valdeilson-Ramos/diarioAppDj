@@ -76,3 +76,4 @@ function showName(nome){
 
 - [ ] tarefa 1
 - [ ] tarefa 2
+- [x] tarefa realizada
