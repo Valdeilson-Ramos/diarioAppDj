@@ -1,7 +1,11 @@
 # Sistema para Registro de Atividades Diárias
 Aplicação para registro de notas **diárias**
+
 ## Instalação:
 
+[Pré-requisitos](#instalando-o-python)
+
+[Clonando o projeto](#clonando-o-repositório)
 ### Instalando o Python 
 
 ### Instalando o PIP
@@ -46,7 +50,7 @@ Aqui uma demonstração de como fazer um code highlight para destacar códigos:
 pip install requierements.txt
 ```
 
-**Exemplo de código para reconhecimento da linguagem**
+### Exemplo de código para reconhecimento da linguagem
 
 ```js
 function showName(nome){
